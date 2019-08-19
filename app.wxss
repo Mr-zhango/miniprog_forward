@@ -1,0 +1,47 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.theme{
+  width: 100%;
+  height: 70rpx;
+  background: rgb(32, 138, 238);
+  color: white;
+  font-weight: bold;
+  line-height: 70rpx;
+  text-align: center;
+}
+.book{
+width: 100%;
+padding-top: 10rpx; 
+font-size: 30rpx;
+height: 500rpx;
+border-bottom: 3rpx dashed slateblue;
+}
+.book-img{
+  width: 100%;
+  height: 500rpx;
+}
+.left{
+  width: 50%;
+  float: left;
+}
+.right{
+  width: 48%;
+  float: right;
+}
+.empty{
+  width:100%;
+  height: 60rpx;
+  background: #F0F0F0;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}

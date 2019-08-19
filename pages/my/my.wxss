@@ -1,0 +1,48 @@
+/* pages/my/my.wxss */
+.header{
+  width: 100%;
+  height: 200rpx;
+  margin-top: 20rpx;
+}
+.header-top{
+  height: 100%;
+  margin: auto;
+  width: 95%;
+  border-bottom: 2rpx solid #999;
+}
+.header-img{
+  width: 30%;
+  height: 200rpx;
+  float: left;
+}
+.header-text{
+  float: left;
+  width: 70%;
+  margin-top: 10rpx;
+}
+.header-text text{
+  display: block;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  color: #333;
+}
+.header-img image{
+  height: 80%;
+  width: 100%;
+}
+.bottom{
+  width: 100%;
+  display: flex;
+}
+.card{
+  text-align: center;
+  margin: auto;
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  margin-top: 150rpx;
+}
+

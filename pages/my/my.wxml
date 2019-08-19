@@ -1,0 +1,30 @@
+
+<view class='header'>
+    <view class='header-top' bindtap='onLogintap'>
+        <block wx:if="{{userInfo}}" wx:key="key">
+            <view class='header-img'>
+                <image src='{{userInfo.avatarUrl}}'></image>
+            </view>
+            <view class='header-text'>
+                　　{{userInfo.nickName}}
+            </view>
+        </block>
+        <block wx:else>
+            <view class='header-img'>
+                <image src='../../images/icon/user@default.png'></image>
+            </view>
+            <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        </block>
+    </view>
+    <view class='bottom'>
+        <view class='card'>
+            0<text>累计</text>
+        </view>
+        <view class='card'>
+            0<text>当前购物车</text>
+        </view>
+        <view class='card'>
+            0<text>购物积分</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,48 @@
+<swiper class="banner" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="key">
+    <swiper-item >
+      <image class='banner-image' src="{{item}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view>
+    <view class='theme'>最新动态</view>
+
+    
+    <text>当前时间：{{time}}</text>
+
+    <text>{{ a === 10? "变量 a 等于10": "变量 a 不等于10"}}</text>
+    <view class='theme-content'>
+      <view class="line">
+        <span class="rigth-icon"></span>商品最新上架通知
+      </view>
+      <view class="line">
+        <span class="rigth-icon"></span>您关注的商品又上新了哦
+      </view>
+      <view class="line">
+        <span class="rigth-icon"></span>双十一,爽不停
+      </view>
+    </view>
+    <view class='theme'>推荐购买</view>
+    <view>
+     <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/logo.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/mi.png'>
+          </image>
+    </view>
+
+
+    <view class='theme'>最新上架</view>
+    <view>
+     <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/logo.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/mi.png'>
+          </image>
+    </view>
+
+</view>

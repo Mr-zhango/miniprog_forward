@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/car/car",
+    "pages/my/my",
+    "pages/search/search"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1E1E1E",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "自由云网络小程序",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#AB956D",
+    "color": "#989898",
+    "backgroundColor": "#F5F5F5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/toolbar/home.png",
+        "selectedIconPath": "images/toolbar/home@selected.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "分类",
+        "iconPath": "images/toolbar/category.png",
+        "selectedIconPath": "images/toolbar/category@selected.png"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "text": "购物车",
+        "iconPath": "images/toolbar/cart.png",
+        "selectedIconPath": "images/toolbar/cart@selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/toolbar/my.png",
+        "selectedIconPath": "images/toolbar/my@selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

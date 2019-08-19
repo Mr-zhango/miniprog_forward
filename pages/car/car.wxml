@@ -1,0 +1,39 @@
+<swiper class="banner" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="key">
+    <swiper-item >
+      <image class='banner-image' src="{{item}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view>
+    <view class='theme'>购物车中的商品</view>
+    
+    <view>
+     <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/logo.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/mi.png'>
+          </image>
+    </view>
+    
+    <view>
+     <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/logo.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/mi.png'>
+          </image>
+    </view>
+
+
+    <view>
+     <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/logo.png'>
+          </image>
+          <image class='card-book' mode='scaleToFill'  src='../../images/mi.png'>
+          </image>
+    </view>
+</view>
