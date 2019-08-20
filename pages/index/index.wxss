@@ -1,5 +1,9 @@
 /* pages/index/car.wxss */
 
+.banner-image{
+  width: 100%;
+  height: 100%;
+}
 /*最新动态一下的宽度*/
 .theme-content{
   width: 100%;

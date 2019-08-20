@@ -1,25 +1,11 @@
 /* pages/index/car.wxss */
 
-/*最新动态一下的宽度*/
-.theme-content{
-  width: 100%;
-  height: 600rpx;
-  background: #FFFFFF;
-  text-indent: 20rpx;
-  font-size: 35rpx;
-}
-
-/*主页大于号的大小*/
-.rigth-icon{
-  font-size: 50rpx;
-  color: crimson;
-}
 /*行间距*/
 .line{
   height: 50rpx;
 }
 
-/*推荐阅读部分样式*/
+/*推荐购买*/
 .card-book{
   width: 33%;
   border-radius: 10rpx;

@@ -16,5 +16,6 @@ Config.restUrl = 'http://localhost:8080/';
 Config.test = 'http://localhost:8080/';
 
 
+Config.buy = 'http://localhost:8080/buy';
 Config.login = 'http://localhost:8080/';
 export { Config }

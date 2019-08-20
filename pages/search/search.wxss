@@ -32,6 +32,3 @@
   text-align: center;
   font-size: 35rpx;
 }
-.type{
-  font-weight: bold;
-}

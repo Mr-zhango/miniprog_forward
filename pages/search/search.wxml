@@ -4,33 +4,16 @@
  <input placeholder='请输入商品名称' type='text'></input>
  <button size='mini' type='primary'>search</button>
 </view>
-<view class='search_result' hidden='1'>
- <view class='book'>
-    <view class='book left'>
-      <image class='book-img' mode='scaleToFill'  src='../../images/logo.png'></image>
-    </view>
-    <view class='book right'>
-      <view>书名：《三国演义》</view>
-      <view>类型：小说、历史</view>
-      <view>编号：01010102</view>    
-      <view>位置：1楼小说艺术馆15书架3层</view>    
-      <view>借书时间：<span class="time">2018-03-22</span></view>
-      <view>到期时间：<span class="time">2018-04-22</span></view>
-      <button size='mini' type='warn'>立即借阅</button>
-    </view>
-  </view>
-</view>
 </view>
 <view hidden=''>
 <view class='theme'>全部分类</view>
   <view class='category'>
-    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-    <view class="picker">
-      <span class="type">筛选</span>：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
-    </view>
-  </picker>
-
-  
+      <!--
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          <span class="type">筛选</span>：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+        </view>
+      </picker>-->
     <view class='book'>
       <view class='left'>
         <image class='book-img' mode='scaleToFill'  src='../../images/logo.png'></image>
