@@ -68,7 +68,17 @@ Page({
 
   },
   //点击登录函数
-  onLogintap:function(){
-    my.getUserInfos();
-  }
+  onLogintap:function(data){
+    console.log("用户点击了"+data);
+    //判断用户是否点击了允许
+    if(data.detail.rawData){
+      //用户点击了允许
+      //保存用户信息
+      my.getUserInfos();
+      //刷新页面
+    }else{
+
+    }
+  },
+
 })

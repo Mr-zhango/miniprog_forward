@@ -1,6 +1,6 @@
 
 <view class='header'>
-    <view class='header-top' bindtap='onLogintap'>
+    <view class='header-top'>
         <block wx:if="{{userInfo}}" wx:key="key">
             <view class='header-img'>
                 <image src='{{userInfo.avatarUrl}}'></image>
@@ -13,7 +13,7 @@
             <view class='header-img'>
                 <image src='../../images/icon/user@default.png'></image>
             </view>
-            <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+            <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="onLogintap">授权登录</button>
         </block>
     </view>
     <view class='bottom'>

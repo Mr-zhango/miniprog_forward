@@ -24,12 +24,6 @@ class My extends Base{
             });
         }
     }
-    //获取用户借阅的图书
-    loadUserBook(){
-        var params = {
-            url:'/user/1',
-        };
-    }
 }
 
 export { My }
