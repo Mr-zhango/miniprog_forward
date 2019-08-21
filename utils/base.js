@@ -35,7 +35,7 @@ class Base {
       success: function (res) {
         if (res.code) {
           console.log("getCode 方法执行了")
-          console.log(res.code);
+          console.log("getCode 方法拿到的code,用来和后台服务器交互获取openkey和session_key的时候的:code是:"+res.code);
 
           that.getOpenID(res.code);
         }
@@ -50,9 +50,9 @@ class Base {
       url: url,
       success: function (res) {
         //成功得到openid和session_key,保存到本地
-        console.log(res);
+        console.log("获取openid函数回调结果:"+res.data.openid );
         wx.setStorageSync('openid', res.data.openid);
-        wx.setStorageSync('session_key', res.data.session_key);
+        //wx.setStorageSync('session_key', res.data.session_key);
       }
     })
   }

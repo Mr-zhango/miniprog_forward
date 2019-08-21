@@ -16,6 +16,7 @@ Config.restUrl = 'http://localhost:8080/';
 Config.test = 'http://localhost:8080/';
 
 
-Config.buy = 'http://localhost:8080/buy';
+Config.buy = 'http://localhost:8080/pay/wxPay';
 Config.login = 'http://localhost:8080/';
+
 export { Config }

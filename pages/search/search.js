@@ -91,7 +91,7 @@ Page({
             },
             data: {
                 productId: 111,  //参数
-                productName: 哪吒,  //参数
+                productName: "product",  //参数
                 productPrice: 0.01,  //参数
             },
             success: function(res) {
