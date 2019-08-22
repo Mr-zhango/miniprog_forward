@@ -13,7 +13,8 @@
             <view class='header-img'>
                 <image src='../../images/icon/user@default.png'></image>
             </view>
-            <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="onLogintap">授权登录</button>
+            <!--<button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="onLogintap">授权登录</button>-->
+            <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="doLogin">授权登录</button>
         </block>
     </view>
     <view class='bottom'>

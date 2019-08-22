@@ -48,17 +48,17 @@ class Base {
 
 //通过code获取openid
     getOpenID(code) {
-        var that = this;
-        var url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + Config.appid + '&secret=' + Config.secret + '&js_code=' + code + '&grant_type=authorization_code';
-        wx.request({
-            url: url,
-            success: function (res) {
-                //成功得到openid和session_key,保存到本地
-                console.log("获取openid函数回调结果:" + res.data.openid);
-                wx.setStorageSync('openid', res.data.openid);
-                wx.setStorageSync('session_key', res.data.session_key);
-            }
-        })
+        // var that = this;
+        // var url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + Config.appid + '&secret=' + Config.secret + '&js_code=' + code + '&grant_type=authorization_code';
+        // wx.request({
+        //     url: url,
+        //     success: function (res) {
+        //         //成功得到openid和session_key,保存到本地
+        //         //console.log("获取openid函数回调结果:" + res.data.openid);
+        //         //wx.setStorageSync('openid', res.data.openid);
+        //         //wx.setStorageSync('session_key', res.data.session_key);
+        //     }
+        // })
     }
     //获取用户信息
     getUserInfos() {
