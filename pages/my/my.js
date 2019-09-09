@@ -1,6 +1,10 @@
 import { My } from './my-model.js';
 var my = new My();
 
+
+//获取应用实例
+const app = getApp()
+
 // pages/my/my.js
 Page({
 
@@ -97,8 +101,7 @@ Page({
 
     }
   },
-  doLogin: function (callback = () => {
-  }) {
+  doLogin: function () {
     let that = this;
     wx.login({
       success: function (loginRes) {
@@ -142,7 +145,7 @@ Page({
             }
           });
         } else {
-
+          console.log("获取用户信息失败");
         }
       }
     });

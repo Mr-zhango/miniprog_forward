@@ -137,13 +137,14 @@ Page({
       url: 'http://localhost:8080/product/all',
       method: "POST",
       header: {
-        'Content-Type': 'json'
+        'Content-Type': 'json',
+        'token': 'o2aHu0H12zKzroLqx26-Fa2VJI7k'
       },
       success: function (res) {
-        console.log(res.data.subjects);
-        var date = res.data.subjects;
+        console.log(res.data);
+        var data = res.data;
         that.setData({
-          list: date
+          list: data
         })
       },
       fail: function () {

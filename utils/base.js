@@ -3,7 +3,7 @@ import {Config} from './config.js';
 class Base {
     constructor() {
         this.baseRequestUrl = Config.restUrl;
-        this.getCode();
+        //this.getCode();
     }
 
     //封装好请求地址的函数
@@ -31,20 +31,20 @@ class Base {
         return event.currentTarget.dataset[key];
     }
 
-    //获取code
-    getCode() {
-        var that = this;
-        wx.login({
-            success: function (res) {
-                if (res.code) {
-                    console.log("getCode 方法执行了")
-                    console.log("getCode 方法拿到的code,用来和后台服务器交互获取openkey和session_key的时候的:code是:" + res.code);
-
-                    that.getOpenID(res.code);
-                }
-            }
-        });
-    }
+    // //获取code
+    // getCode() {
+    //     var that = this;
+    //     wx.login({
+    //         success: function (res) {
+    //             if (res.code) {
+    //                 console.log("getCode 方法执行了")
+    //                 console.log("getCode 方法拿到的code,用来和后台服务器交互获取openkey和session_key的时候的:code是:" + res.code);
+    //
+    //                 that.getOpenID(res.code);
+    //             }
+    //         }
+    //     });
+    // }
 
 // //通过code获取openid
 //     getOpenID(code) {
