@@ -11,7 +11,6 @@ Page({
       'https://www.myfreecloud.cn/store/resources/img/3.jpg',
       'https://www.myfreecloud.cn/store/resources/img/4.jpg'
     ],
-    time:(new Date()).toString(),
     autoplay: true,
     indicatorDots: false,
     interval: 5000,
