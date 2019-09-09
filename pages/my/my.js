@@ -15,7 +15,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      this.doLogin();
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+    }
   },
 
   /**
@@ -80,62 +97,55 @@ Page({
 
     }
   },
-  getUserInfos(callback = () =>{}){
-    //let that = this;
+  doLogin: function (callback = () => {
+  }) {
+    let that = this;
     wx.login({
-      success:function(loginRes){
-        if(loginRes){
+      success: function (loginRes) {
+        if (loginRes) {
           //获取用户信息
           wx.getUserInfo({
-            withCredentials:true,//非必填  默认为true
-            success:function(infoRes){
-              console.log(infoRes,'+++++++++++++++++++++++++++++++');
+            withCredentials: true,//非必填  默认为true
+            success: function (infoRes) {
+              console.log(infoRes, '>>>');
               //请求服务端的登录接口
               wx.request({
-                //url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + Config.appid + '&secret=' + Config.secret + '&js_code=' + loginRes.code + '&grant_type=authorization_code',
-                url:'http://localhost:8080/user/login',
-                data:{
-                  code:loginRes.code,//临时登录凭证
-                  rawData:infoRes.rawData,//用户非敏感信息
-                  signature:infoRes.signature,//签名
-                  encrypteData:infoRes.encryptedData,//用户敏感信息
-                  iv:infoRes.iv//解密算法的向量
+                url: 'http://localhost:8080/user/login',
+                data: {
+                  code: loginRes.code,//临时登录凭证
+                  rawData: infoRes.rawData,//用户非敏感信息
+                  signature: infoRes.signature,//签名
+                  encrypteData: infoRes.encryptedData,//用户敏感信息
+                  iv: infoRes.iv//解密算法的向量
                 },
-                success:function(res){
+                success: function (res) {
                   console.log('login success');
-
+                  console.log('res信息:' + res);
 
                   res = res.data;
+                  if (res.result == 0) {
+                    //that.globalData.userInfo = res.userInfo;
+                    wx.setStorageSync('userInfo', JSON.stringify(res.userInfo));
+                    wx.setStorageSync('loginFlag', res.skey);
+                    console.log("skey=" + res.skey);
 
-                  console.log(res.userInfo);
-                  if(res.result==0){
-                    var user = res.userInfo
-                    console.log(user);
-                    console.log('后台返回 result' +res.result );
-                    // that.globalData.userInfo = user;
-                    wx.setStorageSync('userInfo',JSON.stringify(res.userInfo));
-                    wx.setStorageSync('loginFlag',res.skey);
+                    that.setData({
+                      userInfo: res.userInfo,
+                      hasUserInfo: true
+                    })
 
-                    console.log("skey="+res.skey);
-                    console.log('callback()');
-                    // callback();
-                  }else{
-                    console.log('后台登录成功');
-                    // that.showInfo('res.errmsg');
+                  } else {
+                    console.log("登录失败");
                   }
                 },
-                fail:function(error){
-                  //调用服务端登录接口失败
-                  // that.showInfo('调用接口失败');
-                  console.log(error);
-                }
               });
             }
           });
-        }else{
+        } else {
 
         }
       }
     });
   }
+
 })
