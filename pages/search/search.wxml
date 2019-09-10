@@ -38,14 +38,21 @@
           <input class="inputarea"/>
           <button bindtap='onRequest' type="primary" class="searBtn">查询</button>
       </view>
+
+
       <scroll-view class="article-list" style="height:500px" scroll-y="true" bindscrolltolower="nextPage">
         <block wx:for="{{list}}" wx:key="">
-          <view class="list-item" index="{{index}}">
+          <view index="{{index}}">
             <view class="title">
-            <view class="title-name">{{item.productName}}</view>
+            <view class="title-name">{{item.productGuid}}</view>
+            <view class="title-name">{{item.productGuid}}</view>
+            <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'></image>
+            <button size='mini' type='warn' bindtap="openCode">立即购买</button>
+            <view class="title-name">{{item.productName}}</view>
+            <view class="title-name">{{item.productPrice}}</view>
             </view>
           </view>
         </block>
-    	  </scroll-view>>
+    	  </scroll-view>
   </view>
 </view>

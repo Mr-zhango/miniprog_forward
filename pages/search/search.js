@@ -21,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.onRequest();
   },
 
   /**
@@ -131,8 +131,7 @@ Page({
       mHidden: true
     })
   },
-  onRequest: function () {
-    var that = this;
+  onRequest() {
     wx.request({
       url: 'http://localhost:8080/product/all',
       method: "POST",
@@ -140,11 +139,10 @@ Page({
         'Content-Type': 'json',
         'token': 'o2aHu0H12zKzroLqx26-Fa2VJI7k'
       },
-      success: function (res) {
-        console.log(res.data);
+      success: (res) => {
         var data = res.data;
-        that.setData({
-          list: data
+        this.setData({
+          list: res.data.data
         })
       },
       fail: function () {
