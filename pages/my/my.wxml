@@ -3,10 +3,10 @@
     <view class='header-top'>
         <block wx:if="{{userInfo}}" wx:key="key">
             <view class='header-img'>
-                <image src='{{userInfo.avatarUrl}}'></image>
+                <image src='{{avatarUrl}}'></image>
             </view>
             <view class='header-text'>
-                　　{{userInfo.nickName}}
+                {{name}}
             </view>
         </block>
         <block wx:else>

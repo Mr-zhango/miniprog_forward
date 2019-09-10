@@ -7,12 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    /*index: 0,
-    multiArray: [
-                 ['纪念品', '文化','古籍','法律'],
-                 ['钥匙扣', '中国政治','世界政治', '时政', '党政读物']
-                 ],
-    multiIndex: [0, 0],*/
     mHidden: true,
     list: []
   },
@@ -84,35 +78,33 @@ Page({
 
   buyTicket: function(e) {
       console.info("购买")
-
-
-      // wx.request({
-      //     url: Config.buy, //url
-      //     method: 'POST', //请求方式
-      //     header: {
-      //         'Content-Type': 'application/json',
-      //     },
-      //     data: {
-      //         productId: 111,  //参数
-      //         productName: "product",  //参数
-      //         productPrice: 0.01,  //参数
-      //     },
-      //     success: function(res) {
-      //         // if (res.data.code == 1) {
-      //         //     _this.setData({
-      //         //         phone: res.data.user.phone,
-      //         //         password: res.data.user.password
-      //         //     })
-      //         // }
-      //     },
-      //     fail: function() {
-      //         app.consoleLog("请求数据失败");
-      //     },
-      //     complete: function() {
-      //         console.info("请求完成")
-      //     }
-      // })
-  }, 
+      wx.request({
+          url: 'http://localhost:8080/product/buy',
+          method: 'POST', //请求方式
+          header: {
+              'Content-Type': 'application/json',
+          },
+          data: {
+              productId: 111,  //参数
+              productName: "product",  //参数
+              productPrice: 0.01,  //参数
+          },
+          success: function(res) {
+              // if (res.data.code == 1) {
+              //     _this.setData({
+              //         phone: res.data.user.phone,
+              //         password: res.data.user.password
+              //     })
+              // }
+          },
+          fail: function() {
+              app.consoleLog("请求数据失败");
+          },
+          complete: function() {
+              console.info("请求完成")
+          }
+      })
+  },
   openCode: function (e) {
       console.info("打开二维码窗口")
       this.setData({

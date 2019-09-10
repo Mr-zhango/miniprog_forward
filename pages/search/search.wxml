@@ -47,7 +47,7 @@
             <view class="title-name">{{item.productGuid}}</view>
             <view class="title-name">{{item.productGuid}}</view>
             <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'></image>
-            <button size='mini' type='warn' bindtap="openCode">立即购买</button>
+            <button size='mini' type='warn' bindtap="buyTicket">立即购买</button>
             <view class="title-name">{{item.productName}}</view>
             <view class="title-name">{{item.productPrice}}</view>
             </view>
