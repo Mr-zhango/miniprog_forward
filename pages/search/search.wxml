@@ -36,7 +36,7 @@
     <view class="panel">
           <label class="title">请输入查询内容</label>
           <input class="inputarea"/>
-          <button bindtap='onRequest' type="primary" class="searBtn">查询</button>
+          <button bindtap='onRequest' type="primary" class="searBtn">模拟查询按钮</button>
       </view>
 
 

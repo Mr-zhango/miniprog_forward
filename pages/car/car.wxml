@@ -1,6 +1,5 @@
 <view>
-    <view class='theme'>购物车中的商品</view>
-    
+    <!--<view class='theme'>购物车中的商品</view>
     <view>
      <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'>
           </image>
@@ -8,23 +7,9 @@
           </image>
           <image class='card-book' mode='scaleToFill'  src='../../images/mi.png'>
           </image>
-    </view>
-    
+    </view>-->
     <view>
-     <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'>
-          </image>
-          <image class='card-book' mode='scaleToFill'  src='../../images/logo.png'>
-          </image>
-          <image class='card-book' mode='scaleToFill'  src='../../images/mi.png'>
-          </image>
+        <view>获取更多小萌牛优惠信息,请联系我们的官方客服!!!</view>
     </view>
-
-    <view>
-     <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'>
-          </image>
-          <image class='card-book' mode='scaleToFill'  src='../../images/logo.png'>
-          </image>
-          <image class='card-book' mode='scaleToFill'  src='../../images/mi.png'>
-          </image>
-    </view>
+    <button class="contactKeFu" open-type='contact' session-from=''>点我联系小萌牛客服</button>
 </view>

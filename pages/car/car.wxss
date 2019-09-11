@@ -13,3 +13,12 @@
   margin-bottom: 20rpx;
 }
 
+.contactKeFu{
+
+  width: 100%;
+  border-radius: 10rpx;
+  height: 400rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-size: 50rpx;
+}

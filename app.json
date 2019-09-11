@@ -33,9 +33,9 @@
       },
       {
         "pagePath": "pages/car/car",
-        "text": "购物车",
-        "iconPath": "images/toolbar/cart.png",
-        "selectedIconPath": "images/toolbar/cart@selected.png"
+        "text": "联系客服",
+        "iconPath": "images/toolbar/kefu.png",
+        "selectedIconPath": "images/toolbar/kefu@selected.png"
       },
       {
         "pagePath": "pages/my/my",

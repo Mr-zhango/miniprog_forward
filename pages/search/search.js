@@ -79,7 +79,7 @@ Page({
   buyTicket: function(e) {
       console.info("购买")
       wx.request({
-          url: 'http://localhost:8080/product/buy',
+          url: 'http://localhost:9090/product/buy',
           method: 'POST', //请求方式
           header: {
               'Content-Type': 'application/json',
@@ -87,6 +87,7 @@ Page({
           data: {
               productId: 111,  //参数
               productName: "product",  //参数
+              productNum:1,
               productPrice: 0.01,  //参数
           },
           success: function(res) {
@@ -125,7 +126,7 @@ Page({
   },
   onRequest() {
     wx.request({
-      url: 'http://localhost:8080/product/all',
+      url: 'http://localhost:9090/product/all',
       method: "POST",
       header: {
         'Content-Type': 'json',
