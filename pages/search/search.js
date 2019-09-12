@@ -79,7 +79,7 @@ Page({
   buyTicket: function(e) {
       console.info("购买")
       wx.request({
-          url: 'http://localhost:9090/product/buy',
+          url: 'https://www.myfreecloud.cn:9090/product/buy',
           method: 'POST', //请求方式
           header: {
               'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ Page({
   },
   onRequest() {
     wx.request({
-      url: 'http://localhost:9090/product/all',
+      url: 'https://www.myfreecloud.cn:9090/product/all',
       method: "POST",
       header: {
         'Content-Type': 'json',
