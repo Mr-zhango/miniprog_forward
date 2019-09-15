@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/search/search",
     "pages/index/index",
     "pages/car/car",
-    "pages/my/my",
-    "pages/search/search"
+    "pages/my/my"
   ],
   "window": {
     "navigationBarBackgroundColor": "#1E1E1E",

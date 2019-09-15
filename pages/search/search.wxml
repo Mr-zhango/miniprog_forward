@@ -1,58 +1,48 @@
 <!--pages/search/search.wxml-->
 <view>
-<view class='search'>
- <input placeholder='请输入商品名称' type='text'></input>
- <button size='mini' type='primary'>search</button>
-</view>
+    <!--<view class='search'>
+     <input placeholder='请输入商品名称' type='text' />
+     <button size='mini' type='primary'>search</button>
+    </view>-->
 </view>
 <view hidden=''>
-<view class='theme'>全部分类</view>
-  <view class='category'>
-      <!--
-        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-        <view class="picker">
-          <span class="type">筛选</span>：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
-        </view>
-      </picker>-->
-    <view class='book'>
-      <view class='left'>
-        <image class='book-img' mode='scaleToFill'  src='../../images/logo.png'></image>
-      </view>
-      <view class='right'>
-        <view>商品名：安工logo</view>
-        <view>类型: 纪念挂件</view>
-        <view>编号：201808080888</view>
-        <!--<button size='mini' type='warn' bindtap="buyTicket">立即购买</button>-->
-        <view>
-          <modal title="购买请联系" cancel-text="关闭" confirm-text="确定" hidden="{{mHidden}}" bindconfirm="changeModel" bindcancel="modelCancel">
-            <image class='book-img' mode='scaleToFill'  src='../../images/logo.png'></image>
-          </modal>
-          <button size='mini' type='warn' bindtap="openCode">立即购买</button>
-        </view>
-      </view>
+    <view class='theme'>商品分类</view>
+    <view wx:for="{{categoeyList}}" wx:key="index">
+        <button size='mini' type='primary' data-index="{{item.categoryId}}" bindtap="queryCategory">{{item.categoryName}}</button>
     </view>
-  </view>
-  <view class="container2">
-    <view class="panel">
-          <label class="title">请输入查询内容</label>
-          <input class="inputarea"/>
-          <button bindtap='onRequest' type="primary" class="searBtn">模拟查询按钮</button>
-      </view>
+    <view class='category'>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
+                value="{{multiIndex}}" range="{{multiArray}}">
+            <view class="picker">
+                <span class="type">查询结果</span>：电影票
+            </view>
+        </picker>
+    </view>
 
+    <view class="container2">
+        <button bindtap='onRequest' type="primary" class="searBtn">模拟查询按钮</button>
 
-      <scroll-view class="article-list" style="height:500px" scroll-y="true" bindscrolltolower="nextPage">
-        <block wx:for="{{list}}" wx:key="">
-          <view index="{{index}}">
-            <view class="title">
-            <view class="title-name">{{item.productGuid}}</view>
-            <view class="title-name">{{item.productGuid}}</view>
-            <image class='card-book' mode='scaleToFill' src='../../images/ipad.png'></image>
-            <button size='mini' type='warn' bindtap="buyTicket">立即购买</button>
-            <view class="title-name">{{item.productName}}</view>
-            <view class="title-name">{{item.productPrice}}</view>
-            </view>
-          </view>
-        </block>
-    	  </scroll-view>
-  </view>
+        <scroll-view class="article-list" style="height:500px" scroll-y="true" bindscrolltolower="nextPage">
+             
+            <block wx:for="{{list}}" wx:key="">
+                 
+                <view index="{{index}}">
+                     
+                    <view class="title">
+                         
+                        <view class="title-name">{{item.productGuid}}</view>
+                        <view class="title-name">{{item.productGuid}}</view>
+                        <image class='card-book' mode='scaleToFill' src='{{item.productImage}}'></image>
+                        <button size='mini' type='warn' bindtap="buyTicket">立即购买</button>
+                        <view class="title-name">{{item.productName}}</view>
+                        <view class="title-name">{{item.productPrice}}</view>
+                         
+                    </view>
+                     
+                </view>
+                 
+            </block>
+             
+        </scroll-view>
+    </view>
 </view>

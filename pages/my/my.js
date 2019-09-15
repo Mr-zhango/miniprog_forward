@@ -114,7 +114,8 @@ Page({
               console.log(infoRes, '>>>');
               //请求服务端的登录接口
               wx.request({
-                url: 'http://localhost:8080/user/login',
+                url: 'http://localhost:9090/user/weixinlogin',
+                method: "GET",
                 data: {
                   code: loginRes.code,//临时登录凭证
                   rawData: infoRes.rawData,//用户非敏感信息
