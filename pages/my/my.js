@@ -114,7 +114,7 @@ Page({
               console.log(infoRes, '>>>');
               //请求服务端的登录接口
               wx.request({
-                url: 'http://localhost:9090/user/weixinlogin',
+                url: 'https://www.myfreecloud.cn:9090/user/weixinlogin',
                 method: "GET",
                 data: {
                   code: loginRes.code,//临时登录凭证

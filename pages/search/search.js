@@ -128,7 +128,7 @@ Page({
     onRequest() {
         wx.request({
             //url: 'https://www.myfreecloud.cn:9090/product/all',
-            url: 'http://localhost:9090/product/all',
+            url: 'https://www.myfreecloud.cn:9090/product/all',
             method: "POST",
             header: {
                 'Content-Type': 'json',
@@ -148,7 +148,7 @@ Page({
     allCategory() {
         wx.request({
             //url: 'https://www.myfreecloud.cn:9090/product/all',
-            url: 'http://localhost:9090/api/category/allCategoey',
+            url: 'https://www.myfreecloud.cn:9090/api/category/allCategoey',
             method: "POST",
             header: {
                 'Content-Type': 'json',
@@ -168,7 +168,7 @@ Page({
     queryCategory(e) {
         wx.request({
             //url: 'https://www.myfreecloud.cn:9090/product/all',
-            url: 'http://localhost:9090/queryByCatId/' + e.currentTarget.dataset['index'],
+            url: 'https://www.myfreecloud.cn:9090/queryByCatId/' + e.currentTarget.dataset['index'],
             method: "GET",
             header: {
                 'Content-Type': 'json',

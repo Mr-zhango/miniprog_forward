@@ -1,26 +1,26 @@
 <!--pages/search/search.wxml-->
-<view>
-    <!--<view class='search'>
+<!-- <view>
+    <view class='search'>
      <input placeholder='请输入商品名称' type='text' />
      <button size='mini' type='primary'>search</button>
-    </view>-->
-</view>
+    </view>
+</view> -->
 <view hidden=''>
     <view class='theme'>商品分类</view>
-    <view wx:for="{{categoeyList}}" wx:key="index">
+    <view wx:for="{{categoeyList}}" wx:key="index" class="categoryButton">
         <button size='mini' type='primary' data-index="{{item.categoryId}}" bindtap="queryCategory">{{item.categoryName}}</button>
     </view>
-    <view class='category'>
+    <!-- <view class='category'>
         <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
                 value="{{multiIndex}}" range="{{multiArray}}">
             <view class="picker">
                 <span class="type">查询结果</span>：电影票
             </view>
         </picker>
-    </view>
+    </view> -->
 
     <view class="container2">
-        <button bindtap='onRequest' type="primary" class="searBtn">模拟查询按钮</button>
+        <button bindtap='onRequest' type="primary" class="searBtn">查询所有货物</button>
 
         <scroll-view class="article-list" style="height:500px" scroll-y="true" bindscrolltolower="nextPage">
              
@@ -30,12 +30,11 @@
                      
                     <view class="title">
                          
-                        <view class="title-name">{{item.productGuid}}</view>
-                        <view class="title-name">{{item.productGuid}}</view>
+                        <view class="title-name" hidden="true">商品id:{{item.productGuid}}</view>
+                        <view class="title-name" >商品名称:{{item.productName}}</view>
                         <image class='card-book' mode='scaleToFill' src='{{item.productImage}}'></image>
                         <button size='mini' type='warn' bindtap="buyTicket">立即购买</button>
-                        <view class="title-name">{{item.productName}}</view>
-                        <view class="title-name">{{item.productPrice}}</view>
+                        <view class="title-name">{{item.productPrice}}:元</view>
                          
                     </view>
                      
