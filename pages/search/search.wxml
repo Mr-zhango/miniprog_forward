@@ -1,23 +1,37 @@
-<!--pages/search/search.wxml-->
-<!-- <view>
-    <view class='search'>
-     <input placeholder='请输入商品名称' type='text' />
-     <button size='mini' type='primary'>search</button>
-    </view>
-</view> -->
 <view hidden=''>
     <view class='theme'>商品分类</view>
     <view wx:for="{{categoeyList}}" wx:key="index" class="categoryButton">
-        <button size='mini' type='primary' data-index="{{item.categoryId}}" bindtap="queryCategory">{{item.categoryName}}</button>
+        <button size='mini' type='primary' data-index="{{item.categoryId}}" bindtap="queryCategory">
+            {{item.categoryName}}
+        </button>
     </view>
-    <!-- <view class='category'>
+    <view class="section">
+        <view class="section__title">选择观影地区:</view>
         <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
                 value="{{multiIndex}}" range="{{multiArray}}">
             <view class="picker">
-                <span class="type">查询结果</span>：电影票
+                已选：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
             </view>
         </picker>
-    </view> -->
+    </view>
+    <view class="section">
+        <view class="section__title">选择观影时间:</view>
+        <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+            <view class="picker">
+                当前选择: {{time}}
+            </view>
+        </picker>
+    </view>
+
+    <view class="section">
+        <view class="section__title">日期选择器:</view>
+        <picker mode="date" value="{{date}}" start="2019-10-01" end="2019-12-31" bindchange="bindDateChange">
+            <view class="picker">
+                已选: {{date}}
+            </view>
+        </picker>
+    </view>
+
 
     <view class="container2">
         <button bindtap='onRequest' type="primary" class="searBtn">查询所有货物</button>
@@ -31,7 +45,7 @@
                     <view class="title">
                          
                         <view class="title-name" hidden="true">商品id:{{item.productGuid}}</view>
-                        <view class="title-name" >商品名称:{{item.productName}}</view>
+                        <view class="title-name">商品名称:{{item.productName}}</view>
                         <image class='card-book' mode='scaleToFill' src='{{item.productImage}}'></image>
                         <button size='mini' type='warn' bindtap="buyTicket">立即购买</button>
                         <view class="title-name">{{item.productPrice}}:元</view>

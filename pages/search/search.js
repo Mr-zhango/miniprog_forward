@@ -9,7 +9,31 @@ Page({
     data: {
         mHidden: true,
         list: [],
-        categoeyList: []
+        categoeyList: [],
+        array: ['美国', '中国', '巴西', '日本'],
+        objectArray: [
+            {
+                id: 0,
+                name: '美国'
+            },
+            {
+                id: 1,
+                name: '中国'
+            },
+            {
+                id: 2,
+                name: '巴西'
+            },
+            {
+                id: 3,
+                name: '日本'
+            }
+        ],
+        index: 0,
+        multiArray: [['北京', '上海','广州'], ['北京市通州区新华西街58号万达广场1号楼5层', '北京市石景山区石景山路乙18号万达广场娱乐楼三层','北京市丰台区丰科路与五圈路交叉口丰台万达广场6层']],
+        multiIndex: [0, 0],
+        date: '2016-09-01',
+        time: '12:01'
     },
 
     /**
@@ -194,4 +218,61 @@ Page({
             url: '../logs/logs'
         })
     },
+    bindPickerChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            index: e.detail.value
+        })
+    },
+    bindMultiPickerChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            multiIndex: e.detail.value
+        })
+    },
+    bindMultiPickerColumnChange: function (e) {
+        console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+        var data = {
+            multiArray: this.data.multiArray,
+            multiIndex: this.data.multiIndex
+        };
+        data.multiIndex[e.detail.column] = e.detail.value;
+        switch (e.detail.column) {
+            case 0:
+                switch (data.multiIndex[0]) {
+                    case 0:
+                        data.multiArray[1] = ['北京市通州区新华西街58号万达广场1号楼5层', '北京市石景山区石景山路乙18号万达广场娱乐楼三层', '北京市丰台区丰科路与五圈路交叉口丰台万达广场6层'];
+                        break;
+                    case 1:
+                        data.multiArray[1] = ['上海市嘉定区江桥镇金沙江西路1075弄49号江桥万达广场3层', '上海市浦东新区周浦镇年家浜路518号万达广场C座4层', '上海市杨浦区国宾路58号万达广场三层'];
+                        break;
+                    case 2:
+                        data.multiArray[1] = ['广东省广州市黄埔区科丰路89号万达广场娱乐楼4层', '广东省广州市番禺区汉溪大道东389号番禺万达广场4层', '广东省广州市白云区云城东路503号万达广场娱乐楼3层'];
+                        break;
+                }
+                data.multiIndex[1] = 0;
+                break;
+        }
+        console.log(data.multiIndex);
+        this.setData(data);
+    },
+    bindDateChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            date: e.detail.value
+        })
+    },
+    bindTimeChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            time: e.detail.value
+        })
+    },
+    bindRegionChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            region: e.detail.value
+        })
+    }
+
 })
